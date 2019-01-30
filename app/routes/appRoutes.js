@@ -16,9 +16,9 @@ module.exports = function(app){
 
     //historical places    
     app.route('/historicalplaces')
-       .get();
+       .get(historicalPlaces.listAllHistoricalPlaces);
     app.route('/historicalplaces/:placeId')   
-       .get(); 
+       .get(historicalPlaces.listHistoricalPlaceById); 
 
     //local places    
     app.route('/localplaces')
