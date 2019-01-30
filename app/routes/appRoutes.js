@@ -5,7 +5,7 @@ module.exports = function(app){
     var historicalPeople = require("../controller/historicalpeopleController");
     var historicalPlaces = require("../controller/historicalplacesController");
     var localPlaces = require("../controller/localplacesController");
-    var language = require("../controller/languagesController");
+    var language = require("../controller/languageController");
     var favorites = require("../controller/favoritesController");
 
    //historical people
@@ -22,9 +22,9 @@ module.exports = function(app){
 
     //local places    
     app.route('/localplaces')
-       .get();
+       .get(localPlaces.listAllLocalPlaces);
     app.route('/localplaces/:placeId')   
-       .get(); 
+       .get(localPlaces.listLocalPlaceById); 
 
     //language
     app.route('/language/:termName') 
