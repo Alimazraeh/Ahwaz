@@ -10,9 +10,9 @@ module.exports = function(app){
 
    //historical people
     app.route('/historicalpeople')
-        .get();
+        .get(historicalPeople.listAllHistoricalPeople);
     app.route('/historicalpeople/:personId')   
-        .get(); 
+        .get(historicalPeople.listHistoricalPeopleById); 
 
     //historical places    
     app.route('/historicalplaces')
